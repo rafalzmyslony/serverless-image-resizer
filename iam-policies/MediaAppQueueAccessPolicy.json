@@ -1,0 +1,27 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ListAllQueues",
+            "Effect": "Allow",
+            "Action": "sqs:ListQueues",
+            "Resource": "*"
+        },
+        {
+            "Sid": "ReadAceessMediaAppQueue",
+            "Effect": "Allow",
+            "Action": [
+                "sqs:GetQueueUrl",
+                "sqs:ListDeadLetterSourceQueues",
+                "sqs:ReceiveMessage",
+                "sqs:GetQueueAttributes",
+                "sqs:ListQueueTags",
+                "sqs:ReceiveMessage",
+                "sqs:DeleteMessage",
+                "sqs:GetQueueAttributes",
+                "sqs:GetQueueUrl"
+            ],
+            "Resource": "arn:aws:sqs:eu-central-1:891377300671:media-app-queue"
+        }
+    ]
+}

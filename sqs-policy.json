@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Id": "Policy1679966379166",
+  "Statement": [
+    {
+      "Sid": "Stmt167996637744733",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "sqs:SendMessage",
+      "Resource": "arn:aws:sqs:eu-central-1:891377300671:media-app-queue",
+      "Condition": {
+        "ArnEquals": {
+          "aws:SourceArn": "arn:aws:s3:::media-app-initial-image-rafal"
+        }
+      }
+    }
+  ]
+}
