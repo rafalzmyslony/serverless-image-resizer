@@ -1,3 +1,6 @@
+# Serverless image resizer application in AWS Cloud  
+![logo](https://github.com/rafalzmyslony/serverless-image-resizer/assets/33902552/36316ece-1b59-4856-8038-ea42fd8c5cd7)
+
 This is serverless event-driven application which takes any images from S3 bucket and resizes it to one of 3 types (Profile, Cover, Post) and pushes to another S3 bucket. All lambda logs are saved into CloudWatch service.  
 Practically it works like this - s3 bucket which receives images to resize is configured to push s3 notification events to aws sqs queue. Then lambda function has configured trigger to listen to events from SQS queue and after receiving message from this queue (which is image), uses lambda code to resize image and upload to another S3 bucket.  
 ![Alt text](assets/architecture-image-resizer.png)
